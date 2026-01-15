@@ -1,89 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JailFacebook | The Free Garden</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #1a1a1a; margin: 0; color: #e4e6eb; }
-        
-        /* Header Branding */
-        nav { background-color: #242526; color: #4af626; padding: 12px 20px; position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #3e4042; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.8rem; font-weight: 900; letter-spacing: -1px; }
-        .logo span { color: #ffffff; background: #2d5a27; padding: 2px 8px; border-radius: 4px; margin-left: 5px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JailFacebook | Botanical Research Hub</title>
+<style>
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #18191a; color: #e4e6eb; margin: 0; padding: 0; }
 
-        .container { max-width: 1100px; margin: 20px auto; display: grid; grid-template-columns: 300px 1fr; gap: 25px; padding: 0 15px; }
+/* Nav Bar */
+nav { background-color: #242526; padding: 10px 20px; border-bottom: 1px solid #3e4042; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 1000; }
+.logo { color: #4af626; font-weight: bold; font-size: 1.5rem; letter-spacing: 1px; }
+.logo span { background: #4af626; color: #18191a; padding: 2px 6px; border-radius: 4px; margin-left: 4px; }
 
-        /* Left Sidebar - Research Info */
-        .sidebar-card { background: #242526; border-radius: 10px; padding: 20px; margin-bottom: 20px; border: 1px solid #3e4042; }
-        .profile-pic { width: 100px; height: 100px; background: #2d5a27; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
-        
-        /* The Formula Highlight */
-        .formula-box { background: #18191a; border-left: 4px solid #4af626; padding: 10px; margin-top: 15px; font-family: monospace; }
+/* Main Grid: Left (Profile), Middle (Feed), Right (News) */
+.main-container { max-width: 1200px; margin: 20px auto; display: grid; grid-template-columns: 280px 1fr 300px; gap: 20px; padding: 0 15px; }
 
-        /* Feed */
-        .post { background: #242526; border-radius: 10px; padding: 15px; margin-bottom: 20px; border: 1px solid #3e4042; }
-        .post-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-        .author-name { font-weight: bold; color: #4af626; }
-        .post-text { line-height: 1.6; font-size: 1rem; }
-        
-        .badge { background: #2d5a27; color: white; padding: 4px 8px; border-radius: 12px; font-size: 0.7rem; text-transform: uppercase; }
-        
-        @media (max-width: 850px) { .container { grid-template-columns: 1fr; } .sidebar { display: none; } }
-    </style>
+.card { background-color: #242526; border-radius: 8px; padding: 15px; border: 1px solid #3e4042; margin-bottom: 20px; }
+
+/* Profile Sidebar */
+.profile-pic { width: 80px; height: 80px; background: #2d5a27; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 2rem; border: 2px solid #4af626; }
+.formula-tag { background: #1c1c1c; padding: 10px; border-radius: 5px; font-family: monospace; font-size: 0.85rem; color: #4af626; margin-top: 10px; }
+
+/* News Sidebar */
+.news-item { border-bottom: 1px solid #3e4042; padding: 10px 0; font-size: 0.9rem; }
+.news-item:last-child { border-bottom: none; }
+.news-date { font-size: 0.75rem; color: #b0b3b8; display: block; }
+
+/* Posts */
+.post { background-color: #242526; border-radius: 8px; padding: 20px; border: 1px solid #3e4042; margin-bottom: 20px; }
+.post-header { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
+.author { font-weight: bold; color: #fff; }
+.post-content { line-height: 1.6; }
+
+/* Mobile Layout */
+@media (max-width: 900px) {
+.main-container { grid-template-columns: 1fr; }
+.sidebar-left, .sidebar-right { display: none; }
+}
+</style>
 </head>
 <body>
 
 <nav>
-    <div class="logo">JAIL<span>FB</span></div>
-    <div style="font-size: 0.8rem;">SAN ANTONIO RESEARCH HUB</div>
+<div class="logo">JAIL<span>FB</span></div>
+<div style="font-size: 0.7rem; color: #b0b3b8;">DE-CENSORING BOTANICAL SCIENCE</div>
 </nav>
 
-<div class="container">
-    <aside class="sidebar">
-        <div class="sidebar-card">
-            <div class="profile-pic">🌿</div>
-            <h2 style="text-align:center; margin: 0;">Medicinal Garden</h2>
-            <p style="text-align:center; color: #b0b3b8; font-size: 0.9rem;">Breaking the algorithm with botanical truth.</p>
-            
-            <div class="formula-box">
-                <strong>STRICT RATIO:</strong><br>
-                • 6.5g Moringa Seed<br>
-                • 2.5g Chiltepín<br>
-                • 41.0g Moringa Leaf<br>
-                (Per 100 Caps)
-            </div>
-        </div>
-    </aside>
+<div class="main-container">
 
-    <main>
-        <div class="post">
-            <div class="post-header">
-                <div style="width:45px; height:45px; background:#2d5a27; border-radius:50%;"></div>
-                <div>
-                    <div class="author-name">Admin_Botanist <span class="badge">Verified Researcher</span></div>
-                    <div style="color: #b0b3b8; font-size: 0.8rem;">Live from San Antonio Lab</div>
-                </div>
-            </div>
-            <div class="post-text">
-                Welcome to <strong>JailFacebook</strong>. Here, we don't censor the science. <br><br>
-                Our latest research focus: How <strong>Chiltepín pepper</strong> and its high capsaicin levels work with Moringa to target inflammation in diabetic research. This isn't just a garden; it's a movement.
-            </div>
-        </div>
+<aside class="sidebar-left">
+<div class="card">
+<div class="profile-pic">🌿</div>
+<h3 style="text-align: center; margin: 0;">Medicinal Garden</h3>
+<p style="text-align: center; font-size: 0.8rem; color: #b0b3b8;">San Antonio, TX</p>
+<div class="formula-tag">
+🧪 RATIO ALPHA:<br>
+- 6.5g Seed<br>
+- 2.5g Chiltepín<br>
+- 41.0g Leaf
+</div>
+</div>
+</aside>
 
-        <div class="post">
-            <div class="post-header">
-                <div style="width:45px; height:45px; background:#2d5a27; border-radius:50%;"></div>
-                <div>
-                    <div class="author-name">Admin_Botanist</div>
-                    <div style="color: #b0b3b8; font-size: 0.8rem;">Yesterday at 3:41 AM</div>
-                </div>
-            </div>
-            <div class="post-text">
-                Why 41.0g of leaf powder? Because high-concentration Moringa leaf contains the essential nutrients required to balance the potency of the 6.5g seed extract. Precision matters in anti-cancer research.
-            </div>
-        </div>
-    </main>
+<main class="feed">
+<div class="post">
+<div class="post-header">
+<div style="width: 40px; height: 40px; background: #2d5a27; border-radius: 50%;"></div>
+<div>
+<span class="author">Admin_Botanist</span>
+<span style="color: #b0b3b8; font-size: 0.8rem; display: block;">Pinned Post</span>
+</div>
+</div>
+<div class="post-content">
+Welcome to <strong>JailFacebook</strong>. This platform is dedicated to the unfiltered research of Medicinal Garden LLC. We focus on the anti-cancer and diabetic properties of Moringa and Chiltepín. No algorithms, just results.
+</div>
+</div>
+
+<div class="post">
+<div class="post-header">
+<div style="width: 40px; height: 40px; background: #2d5a27; border-radius: 50%;"></div>
+<div>
+<span class="author">Admin_Botanist</span>
+<span style="color: #b0b3b8; font-size: 0.8rem; display: block;">2 hours ago</span>
+</div>
+</div>
+<div class="post-content">
+Research Update: Our 41.0g leaf powder concentration is essential. It provides the base flavonoids that allow the 6.5g seed extract to be absorbed more efficiently by the body. Precision is everything in San Antonio.
+</div>
+</div>
+</main>
+
+<aside class="sidebar-right">
+<div class="card">
+<h4 style="margin-top: 0; color: #4af626;">RESEARCH ALERTS</h4>
+
+<div class="news-item">
+<span class="news-date">JAN 14, 2026</span>
+Moringa seeds show 40% higher potency in recent lab tests.
+</div>
+
+<div class="news-item">
+<span class="news-date">JAN 12, 2026</span>
+Chiltepín capsaicin extraction successful. Apoptosis study begins.
+</div>
+
+<div class="news-item">
+<span class="news-date">JAN 10, 2026</span>
+New apparel drop: Research hoodies now available.
+</div>
+</div>
+</aside>
+
 </div>
 
 </body>
